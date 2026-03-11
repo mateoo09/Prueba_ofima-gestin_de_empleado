@@ -1,0 +1,54 @@
+<div class="employee-list-container">
+  <div class="header-actions">
+    <h2>Lista de Empleados</h2>
+    <div class="actions">
+      <button (click)="addEmployee()" class="btn btn-primary">Agregar Empleado</button>
+      <button (click)="logout()" class="btn btn-secondary">Cerrar Sesión</button>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div class="loading" *ngIf="isLoading">
+    <p>Cargando empleados...</p>
+  </div>
+
+  <!-- Error Message -->
+  <div class="error-message" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Employee Table -->
+  <div class="table-container" *ngIf="!isLoading && !errorMessage">
+    <table class="employee-table" *ngIf="employees.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Cargo</th>
+          <th>Departamento</th>
+          <th>Salario</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.position }}</td>
+          <td>{{ employee.department }}</td>
+          <td>{{ formatSalary(employee.salary) }}</td>
+          <td class="actions-cell">
+            <button (click)="editEmployee(employee.id)" class="btn btn-sm btn-edit">Editar</button>
+            <button (click)="deleteEmployee(employee.id)" class="btn btn-sm btn-delete">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="no-data" *ngIf="employees.length === 0">
+      <p>No se encontraron empleados. Click "Agregar Empleado" para crear el primero.</p>
+    </div>
+  </div>
+</div>
