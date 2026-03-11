@@ -1,16 +1,33 @@
-# Employee App
+# Sistema de Gestión de Empleados
 
-An Angular application for managing employees with login, CRUD operations, and routing.
+Aplicación web Angular para la gestión de empleados con autenticación, operaciones CRUD y enrutamiento.
 
-## Features
+## Características
 
-- User authentication (login/logout)
-- Employee management (Create, Read, Update, Delete)
-- Responsive design with CSS styling
-- Angular routing between components
-- Clean and simple project structure
+- Autenticación de usuarios (login/logout)
+- Gestión de empleados (Crear, Leer, Actualizar, Eliminar)
+- Diseño responsivo con CSS
+- Enrutamiento Angular entre componentes
+- Estructura de proyecto limpia y simple
 
-## Project Structure
+## Tecnologías Utilizadas
+
+### Frontend
+- **Angular 17**
+- **TypeScript**
+- **HTML**
+- **CSS**
+- **Angular Forms**
+- **Angular Router**
+
+### Backend (API)
+- **C#**
+- **ASP.NET Core Web API**
+- **Entity Framework**
+- **SQL Server**
+- **JWT (JSON Web Token)** para autenticación
+
+## Estructura del Proyecto
 
 ```
 src/
@@ -24,63 +41,56 @@ src/
 │   │   ├── employee-list.component.ts/html/css
 │   ├── employee-form/
 │   │   ├── employee-form.component.ts/html/css
+│   ├── register/
+│   │   ├── register.component.ts/html/css
+│   ├── auth.service.ts
 │   └── employee.service.ts
 ├── index.html
 ├── main.ts
 └── styles.css
 ```
 
-## Installation
+## Instalación
 
-1. Install Node.js and npm
-2. Install Angular CLI: `npm install -g @angular/cli`
-3. Install dependencies: `npm install`
-4. Run the development server: `ng serve`
+1. Instalar Node.js y npm
+2. Instalar Angular CLI: `npm install -g @angular/cli`
+3. Instalar dependencias: `npm install`
+4. Iniciar servidor de desarrollo: `ng serve`
 
-## Usage
+## Uso
 
 ### Login
-- Navigate to the login page
-- Use demo credentials:
+- Navegar a la página de login
+- Usar credenciales de demostración:
   - Username: `admin`
   - Password: `admin`
 
-### Employee Management
-- View all employees in the employee list
-- Add new employees using the "Add Employee" button
-- Edit existing employees by clicking the "Edit" button
-- Delete employees using the "Delete" button
+### Gestión de Empleados
+- Ver todos los empleados en la lista
+- Agregar nuevos empleados con el botón "Agregar Empleado"
+- Editar empleados existentes con el botón "Editar"
+- Eliminar empleados con el botón "Eliminar"
 
-## Components
+## Componentes
 
-- **LoginComponent**: Handles user authentication
-- **EmployeeListComponent**: Displays list of all employees
-- **EmployeeFormComponent**: Form for adding/editing employees
-- **EmployeeService**: Service for managing employee data
+- **LoginComponent**: Maneja la autenticación de usuarios
+- **EmployeeListComponent**: Muestra la lista de todos los empleados
+- **EmployeeFormComponent**: Formulario para agregar/editar empleados
+- **RegisterComponent**: Formulario de registro de usuarios
+- **AuthService**: Servicio para gestionar autenticación
+- **EmployeeService**: Servicio para gestionar datos de empleados
 
-## Routing
+## Enrutamiento
 
-- `/login` - Login page
-- `/employees` - Employee list page
-- `/employees/new` - Add new employee
-- `/employees/edit/:id` - Edit existing employee
+- `/login` - Página de login
+- `/register` - Página de registro
+- `/employees` - Lista de empleados
+- `/employees/new` - Agregar nuevo empleado
+- `/employees/edit/:id` - Editar empleado existente
 
-## Development
+## Scripts Disponibles
 
-This project was generated with Angular CLI version 17.0.0.
-
-### Available Scripts
-
-- `ng serve` - Start development server
-- `ng build` - Build for production
-- `ng test` - Run unit tests
-- `ng lint` - Run linting
-
-## Technologies Used
-
-- Angular 17
-- TypeScript
-- CSS
-- Angular CLI
-- Angular Forms
-- Angular Router
+- `ng serve` - Iniciar servidor de desarrollo
+- `ng build` - Construir para producción
+- `ng test` - Ejecutar pruebas unitarias
+- `ng lint` - Ejecutar linting
